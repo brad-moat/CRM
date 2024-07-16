@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Rate Review</title>
+    <link rel="stylesheet" href="/Fixed Rate Reviews/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fixed Rate Reviews</h1>
+        <form id="reviewForm">
+            <input type="hidden" id="editIndex">
+            <div>
+                <label for="clientName">Client Name:</label>
+                <input type="text" id="clientName" name="clientName" required>
+            </div>
+            <div>
+                <label for="loanAmount">Loan Amount:</label>
+                <input type="text" id="loanAmount" name="loanAmount" required>
+            </div>
+            <div>
+                <label for="bank">Bank:</label>
+                <input type="text" id="bank" name="bank" required>
+            </div>
+            <div>
+                <label for="reviewDate">Review Date:</label>
+                <input type="date" id="reviewDate" name="reviewDate" required>
+            </div>
+            <div>
+                <label for="advisor">Advisor:</label>
+                <input type="text" id="advisor" name="advisor" required>
+            </div>
+            <div>
+                <label for="tags">Tags (Comma-separated):</label>
+                <input type="text" id="tags" name="tags" placeholder="Enter tags separated by commas">
+            </div>
+            <div class="tag-color-input">
+                <label for="tagColor">Tag Color:</label>
+                <div id="tagColor" class="tag-color-box" onclick="openColorPicker()"></div>
+                <input type="color" id="tagColorPicker" style="display: none;">
+            </div>
+            <div class="button-container">
+                <button type="submit">Save Review</button>
+                <button type="button" onclick="exportToExcel()">Export to Excel</button>
+            </div>
+        </form>
+        <table id="reviewsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('name')">Client Name</th>
+                    <th onclick="sortTable('amount')">Loan Amount</th>
+                    <th onclick="sortTable('bank')">Bank</th>
+                    <th onclick="sortTable('date')">Review Date</th>
+                    <th onclick="sortTable('advisor')">Advisor</th>
+                    <th>Tags</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Reviews will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
