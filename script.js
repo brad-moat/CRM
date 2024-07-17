@@ -7,7 +7,8 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     // Simulate a delay for the login process
     setTimeout(function() {
         // Redirect to the home page on successful login
-        window.location.href = 'Dashboard/dashboard.html';
+        var baseUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
+        window.location.href = baseUrl + 'Dashboard/dashboard.html';
     }, 2000); // Adjust the delay as needed
 });
 
