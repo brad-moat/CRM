@@ -8,7 +8,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     setTimeout(function() {
         // Redirect to the home page on successful login
         var baseUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
-         window.location.href = 'CRM/Dashboard/dashboard.html';
+         window.location.href = '/CRM/Dashboard/dashboard.html';
     }, 2000); // Adjust the delay as needed
 });
 
