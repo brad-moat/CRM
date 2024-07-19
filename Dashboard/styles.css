@@ -4,7 +4,7 @@ body {
     color: #495057; /* Dark gray text color */
     margin: 0;
     padding: 0;
-    background-image: url('/Images/white-background.jpg');
+    background-image: url('/CRM/Images/white-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
