@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Affordability Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container" id="content">
+        <h1>Loan Affordability Calculator</h1>
+        <form id="loanForm">
+            <!-- Personal Information -->
+            <div class="form-group">
+                <label for="buyerType">Who wants to buy a home?</label>
+                <select id="buyerType">
+                    <option value="single">Just me</option>
+                    <option value="couple">My partner and I</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dependents">How many dependents do you have? (18 years or younger)</label>
+                <select id="dependents">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                </select>
+            </div>
+
+            <!-- Property Information -->
+            <div class="form-group">
+                <label for="propertyType">What type of property are you looking to buy?</label>
+                <select id="propertyType">
+                    <option value="investment">Investment</option>
+                    <option value="ownerOccupied">Owner occupied</option>
+                </select>
+            </div>
+
+            <!-- Income Information -->
+            <div class="form-group">
+                <label for="baseSalary">What is your base salary/wages? (before tax)</label>
+                <input type="number" id="baseSalary" placeholder="$ per year">
+            </div>
+
+            <div class="form-group">
+                <label for="additionalIncomeSource">Add another income source (before tax)</label>
+                <select id="additionalIncomeSource">
+                    <option value="rental">Rental income</option>
+                    <option value="interest">Interest</option>
+                    <option value="dividends">Dividends</option>
+                </select>
+                <input type="number" id="additionalIncome" placeholder="$ per year">
+            </div>
+
+            <!-- Expenses and Commitments -->
+            <div class="form-group">
+                <label for="homeLoanRepayment">Home loan/s repayment</label>
+                <input type="number" id="homeLoanRepayment" placeholder="$ per month">
+            </div>
+
+            <div class="form-group">
+                <label for="studentLoanRepayment">Student loan repayments</label>
+                <input type="number" id="studentLoanRepayment" placeholder="$ per month">
+            </div>
+
+            <div class="form-group">
+                <label for="personalLoanRepayment">Personal loan/s repayment</label>
+                <input type="number" id="personalLoanRepayment" placeholder="$ per month">
+            </div>
+
+            <div class="form-group">
+                <label for="creditCardRepayment">Credit card repayment</label>
+                <input type="number" id="creditCardRepayment" placeholder="$ per month">
+            </div>
+
+            <div class="form-group">
+                <label for="bnplRepayment">Buy Now Pay Later repayment</label>
+                <input type="number" id="bnplRepayment" placeholder="$ per month">
+            </div>
+
+            <div class="form-group">
+                <label for="overdraftRepayment">Overdraft repayment</label>
+                <input type="number" id="overdraftRepayment" placeholder="$ per month">
+            </div>
+
+            <div class="form-group">
+                <label for="livingExpenses">Would you like to use the average living costs for your typical household?</label>
+                <select id="useAverageLivingCosts" onchange="toggleLivingExpenses()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <input type="number" id="livingExpenses" placeholder="$ per month" style="display:none;">
+            </div>
+
+            <button type="button" onclick="showLoadingSpinner(); setTimeout(calculateLoanAffordability, 1000);">Calculate</button>
+            <button type="button" onclick="downloadPDF()">Download as PDF</button>
+        </form>
+        <div id="result"></div>
+        <a href="/Dashboard/dashboard.html" class="back-home">Home</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="/Loan Affordability Calc/script.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #495057; /* Dark gray text color */
+    margin: 0;
+    padding: 0;
+    background-image: url('/Images/white-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+}
+
+h1 {
+    text-align: center;
+    color: #343a40; /* Darker header color */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.widget {
+    border: 1px solid #ced4da; /* Light gray border */
+    padding: 20px;
+    margin: 10px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 40px); /* 2 widgets per row with margins */
+    border-radius: 5px; /* Rounded corners */
+    position: relative;
+}
+
+.widget h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #343a40; /* Darker header color */
+    text-align: center;
+}
+
+.widget input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.widget button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.widget button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.widget .triangle {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.widget-content {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+}
+
+/* Triangle pointing down */
+.triangle.down::before {
+    content: '\25BC'; /* Downward triangle */
+}
+
+/* Triangle pointing up */
+.triangle.up::before {
+    content: '\25B2'; /* Upward triangle */
+}
+
+.menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #ffffff; /* White background */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #495057; /* Dark gray text color */
+    display: block;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.menu a:hover {
+    background-color: rgba(37, 89, 116, 0.7); /* Bootstrap primary color */
+    color: #ffffff; /* White text on hover */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f8f9fa; /* Light gray background */
+    backdrop-filter: blur(5px); /* Optional: adds a blur effect */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    width: 250px;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+.dropdown-toggle::after {
+    content: '\25BE'; /* Unicode character for down arrow */
+    margin-left: 5px;
+    pointer-events: none; /* Prevents the arrow from intercepting clicks */
+}
+
+#menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #343a40; /* Dark gray color of the tribar */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+}
+
+#menu-toggle.active {
+    color: rgba(37, 89, 116, 0.7); /* Bootstrap primary color when clicked */
+}
