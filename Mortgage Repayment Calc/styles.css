@@ -116,3 +116,70 @@ button:hover {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #ffffff; /* White background */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #495057; /* Dark gray text color */
+    display: block;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.menu a:hover {
+    background-color: rgba(37, 89, 116, 0.7); /* Bootstrap primary color */
+    color: #ffffff; /* White text on hover */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f8f9fa; /* Light gray background */
+    backdrop-filter: blur(5px); /* Optional: adds a blur effect */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    width: 250px;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+.dropdown-toggle::after {
+    content: '\25BE'; /* Unicode character for down arrow */
+    margin-left: 5px;
+    pointer-events: none; /* Prevents the arrow from intercepting clicks */
+}
+
+#menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #343a40; /* Dark gray color of the tribar */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+}
+
+#menu-toggle.active {
+    color: rgba(37, 89, 116, 0.7); /* Bootstrap primary color when clicked */
+}
