@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.triangle').forEach(triangle => {
         triangle.addEventListener('click', function() {
             var widgetContent = this.nextElementSibling;
-            if (widgetContent && (widgetContent.style.display === 'none' || widgetContent.style.display === '')) {
-                widgetContent.style.display = 'block';
-                this.classList.remove('up');
-                this.classList.add('down');
-            } else if (widgetContent) {
-                widgetContent.style.display = 'none';
-                this.classList.remove('down');
-                this.classList.add('up');
+            if (widgetContent) {
+                if (widgetContent.style.display === 'none' || widgetContent.style.display === '') {
+                    widgetContent.style.display = 'block';
+                    this.innerHTML = '&#9660;'; // Downward triangle
+                } else {
+                    widgetContent.style.display = 'none';
+                    this.innerHTML = '&#9650;'; // Upward triangle
+                }
             }
         });
     });
@@ -56,3 +56,4 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching the RSS feed:', error));
 });
+
