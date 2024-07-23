@@ -12,11 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.onclick = function() {
         if (menu.style.left === "0px") {
             menu.style.left = "-250px";
-            document.getElementById("content").style.marginLeft = "0";
             menuToggle.classList.remove("active"); // Remove active class to revert color
         } else {
             menu.style.left = "0px";
-            document.getElementById("content").style.marginLeft = "250px";
             menuToggle.classList.add("active"); // Add active class to change color
         }
     };
@@ -152,3 +150,4 @@ document.getElementById('principal').addEventListener('input', function (e) {
     const cursorPosition = e.target.selectionStart;
     e.target.setSelectionRange(cursorPosition, cursorPosition);
 });
+
