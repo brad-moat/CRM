@@ -58,17 +58,6 @@
                 </ul>
             </li>
         </ul>
-        <ul class="nav navbar-nav pull-right" id="cloudMenu">
-          <li class="dropdown"> 
-            <a class="dropdown-toggle" data-toggle="dropdown">Cloud <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a ng-click="cloudMenu.openCloudSetup()" href=""><i class="glyphicon glyphicon-wrench"></i> Setup</a></li>
-              <li><a ng-click="cloudMenu.upload()" href=""><i class="glyphicon glyphicon-upload"></i> Upload</a></li>
-              <li><a ng-click="cloudMenu.download()" href=""><i class="glyphicon glyphicon-download"></i> Download</a></li>
-              <li><a href="https://my-personal-kanban.appspot.com/" target="blank"><i class="glyphicon glyphicon-hand-right"></i> Go to Cloud</a></li>
-            </ul>
-          </li>
-        </ul>
         <div id="info" class="nav pull-right" ng-show="showInfo">
           <span id="error" class="error" ng-show="showError"><a ng-click="showInfo=false;showError=false;errorMessage=''">{{errorMessage}}</a></span>
           <span id="message" class="">{{infoMessage}}</span>
